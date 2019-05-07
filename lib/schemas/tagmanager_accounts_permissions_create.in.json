@@ -1,0 +1,96 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents a user's permissions to an account and its container.",
+            "properties": {
+                "accountAccess": {
+                    "description": "GTM Account access permissions.",
+                    "properties": {
+                        "permission": {
+                            "description": "List of Account permissions. Valid account permissions are read and manage.",
+                            "items": {
+                                "enum": [
+                                    "delete",
+                                    "edit",
+                                    "editWorkspace",
+                                    "manage",
+                                    "publish",
+                                    "read"
+                                ],
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "accountId": {
+                    "description": "GTM Account ID.",
+                    "type": "string"
+                },
+                "containerAccess": {
+                    "description": "GTM Container access permissions.",
+                    "items": {
+                        "description": "Defines the Google Tag Manager Container access permissions.",
+                        "properties": {
+                            "containerId": {
+                                "description": "GTM Container ID.",
+                                "type": "string"
+                            },
+                            "permission": {
+                                "description": "List of Container permissions. Valid container permissions are: read, edit, delete, publish.",
+                                "items": {
+                                    "enum": [
+                                        "delete",
+                                        "edit",
+                                        "editWorkspace",
+                                        "manage",
+                                        "publish",
+                                        "read"
+                                    ],
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "emailAddress": {
+                    "description": "User's email address.",
+                    "type": "string"
+                },
+                "permissionId": {
+                    "description": "Account Permission ID.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

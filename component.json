@@ -1,0 +1,883 @@
+{
+    "title": "Tag Manager",
+    "description": "Accesses Tag Manager accounts and containers.",
+    "docsUrl": "https://developers.google.com/tag-manager/api/v1/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/tagmanager/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/tagmanager/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "tagmanager_accounts_list": {
+            "main": "./lib/actions/tagmanager_accounts_list.js",
+            "title": "Lists all GTM Accounts that a user has access to.",
+            "description": "Lists all GTM Accounts that a user has access to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_get": {
+            "main": "./lib/actions/tagmanager_accounts_get.js",
+            "title": "Gets a GTM Account.",
+            "description": "Gets a GTM Account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_update": {
+            "main": "./lib/actions/tagmanager_accounts_update.js",
+            "title": "Updates a GTM Account.",
+            "description": "Updates a GTM Account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_list.js",
+            "title": "Lists all Containers that belongs to a GTM Account.",
+            "description": "Lists all Containers that belongs to a GTM Account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_create.js",
+            "title": "Creates a Container.",
+            "description": "Creates a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_delete.js",
+            "title": "Deletes a Container.",
+            "description": "Deletes a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_get.js",
+            "title": "Gets a Container.",
+            "description": "Gets a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_update.js",
+            "title": "Updates a Container.",
+            "description": "Updates a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_environments_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_environments_list.js",
+            "title": "Lists all GTM Environments of a GTM Container.",
+            "description": "Lists all GTM Environments of a GTM Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_environments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_environments_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_environments_create.js",
+            "title": "Creates a GTM Environment.",
+            "description": "Creates a GTM Environment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_environments_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_environments_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_environments_delete.js",
+            "title": "Deletes a GTM Environment.",
+            "description": "Deletes a GTM Environment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_environments_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_environments_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_environments_get.js",
+            "title": "Gets a GTM Environment.",
+            "description": "Gets a GTM Environment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_environments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_environments_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_environments_update.js",
+            "title": "Updates a GTM Environment.",
+            "description": "Updates a GTM Environment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_environments_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_list.js",
+            "title": "Lists all GTM Folders of a Container.",
+            "description": "Lists all GTM Folders of a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_create.js",
+            "title": "Creates a GTM Folder.",
+            "description": "Creates a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_delete.js",
+            "title": "Deletes a GTM Folder.",
+            "description": "Deletes a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_get.js",
+            "title": "Gets a GTM Folder.",
+            "description": "Gets a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_update.js",
+            "title": "Updates a GTM Folder.",
+            "description": "Updates a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_folders_entities_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_folders_entities_list.js",
+            "title": "List all entities in a GTM Folder.",
+            "description": "List all entities in a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_folders_entities_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_move_folders_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_move_folders_update.js",
+            "title": "Moves entities to a GTM Folder.",
+            "description": "Moves entities to a GTM Folder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_move_folders_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_reauthorize_environments_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_reauthorize_environments_update.js",
+            "title": "Re-generates the authorization code for a GTM Environment.",
+            "description": "Re-generates the authorization code for a GTM Environment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_reauthorize_environments_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_tags_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_tags_list.js",
+            "title": "Lists all GTM Tags of a Container.",
+            "description": "Lists all GTM Tags of a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_tags_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_tags_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_tags_create.js",
+            "title": "Creates a GTM Tag.",
+            "description": "Creates a GTM Tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_tags_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_tags_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_tags_delete.js",
+            "title": "Deletes a GTM Tag.",
+            "description": "Deletes a GTM Tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_tags_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_tags_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_tags_get.js",
+            "title": "Gets a GTM Tag.",
+            "description": "Gets a GTM Tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_tags_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_tags_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_tags_update.js",
+            "title": "Updates a GTM Tag.",
+            "description": "Updates a GTM Tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_tags_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_triggers_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_triggers_list.js",
+            "title": "Lists all GTM Triggers of a Container.",
+            "description": "Lists all GTM Triggers of a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_triggers_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_triggers_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_triggers_create.js",
+            "title": "Creates a GTM Trigger.",
+            "description": "Creates a GTM Trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_triggers_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_triggers_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_triggers_delete.js",
+            "title": "Deletes a GTM Trigger.",
+            "description": "Deletes a GTM Trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_triggers_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_triggers_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_triggers_get.js",
+            "title": "Gets a GTM Trigger.",
+            "description": "Gets a GTM Trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_triggers_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_triggers_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_triggers_update.js",
+            "title": "Updates a GTM Trigger.",
+            "description": "Updates a GTM Trigger.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_triggers_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_variables_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_variables_list.js",
+            "title": "Lists all GTM Variables of a Container.",
+            "description": "Lists all GTM Variables of a Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_variables_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_variables_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_variables_create.js",
+            "title": "Creates a GTM Variable.",
+            "description": "Creates a GTM Variable.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_variables_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_variables_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_variables_delete.js",
+            "title": "Deletes a GTM Variable.",
+            "description": "Deletes a GTM Variable.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_variables_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_variables_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_variables_get.js",
+            "title": "Gets a GTM Variable.",
+            "description": "Gets a GTM Variable.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_variables_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_variables_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_variables_update.js",
+            "title": "Updates a GTM Variable.",
+            "description": "Updates a GTM Variable.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_variables_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_list": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_list.js",
+            "title": "Lists all Container Versions of a GTM Container.",
+            "description": "Lists all Container Versions of a GTM Container.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_create": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_create.js",
+            "title": "Creates a Container Version.",
+            "description": "Creates a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_delete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_delete.js",
+            "title": "Deletes a Container Version.",
+            "description": "Deletes a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_get": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_get.js",
+            "title": "Gets a Container Version.",
+            "description": "Gets a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_update": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_update.js",
+            "title": "Updates a Container Version.",
+            "description": "Updates a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_publish": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_publish.js",
+            "title": "Publishes a Container Version.",
+            "description": "Publishes a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_publish.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_restore": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_restore.js",
+            "title": "Restores a Container Version. This will overwrite the container's current configuration (including its variables, triggers and tags). The operation will not have any effect on the version that is being served (i.e. the published version).",
+            "description": "Restores a Container Version. This will overwrite the container's current configuration (including its variables, triggers and tags). The operation will not have any effect on the version that is being served (i.e. the published version).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_restore.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_containers_versions_undelete": {
+            "main": "./lib/actions/tagmanager_accounts_containers_versions_undelete.js",
+            "title": "Undeletes a Container Version.",
+            "description": "Undeletes a Container Version.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_containers_versions_undelete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_permissions_list": {
+            "main": "./lib/actions/tagmanager_accounts_permissions_list.js",
+            "title": "List all users that have access to the account along with Account and Container Permissions granted to each of them.",
+            "description": "List all users that have access to the account along with Account and Container Permissions granted to each of them.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_permissions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_permissions_create": {
+            "main": "./lib/actions/tagmanager_accounts_permissions_create.js",
+            "title": "Creates a user's Account & Container Permissions.",
+            "description": "Creates a user's Account & Container Permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_permissions_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_permissions_delete": {
+            "main": "./lib/actions/tagmanager_accounts_permissions_delete.js",
+            "title": "Removes a user from the account, revoking access to it and all of its containers.",
+            "description": "Removes a user from the account, revoking access to it and all of its containers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_permissions_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_permissions_get": {
+            "main": "./lib/actions/tagmanager_accounts_permissions_get.js",
+            "title": "Gets a user's Account & Container Permissions.",
+            "description": "Gets a user's Account & Container Permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_permissions_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "tagmanager_accounts_permissions_update": {
+            "main": "./lib/actions/tagmanager_accounts_permissions_update.js",
+            "title": "Updates a user's Account & Container Permissions.",
+            "description": "Updates a user's Account & Container Permissions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/tagmanager_accounts_permissions_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "containerId": {
+            "required": true,
+            "type": "string"
+        },
+        "environmentId": {
+            "required": true,
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents a Google Tag Manager Environment. Note that a user can create, delete and update environments of type USER, but can only update the enable_debug and url fields of environments of other types.",
+            "properties": {
+                "accountId": {
+                    "description": "GTM Account ID.",
+                    "type": "string"
+                },
+                "authorizationCode": {
+                    "description": "The environment authorization code.",
+                    "type": "string"
+                },
+                "authorizationTimestampMs": {
+                    "description": "The last update time-stamp for the authorization code.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "containerId": {
+                    "description": "GTM Container ID.",
+                    "type": "string"
+                },
+                "containerVersionId": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The environment description. Can be set or changed only on USER type environments.",
+                    "type": "string"
+                },
+                "enableDebug": {
+                    "description": "Whether or not to enable debug by default on for the environment.",
+                    "type": "boolean"
+                },
+                "environmentId": {
+                    "description": "GTM Environment ID uniquely identifies the GTM Environment.",
+                    "type": "string"
+                },
+                "fingerprint": {
+                    "description": "The fingerprint of the GTM environment as computed at storage time. This value is recomputed whenever the environment is modified.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The environment display name. Can be set or changed only on USER type environments.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of this environment.",
+                    "enum": [
+                        "draft",
+                        "latest",
+                        "live",
+                        "user"
+                    ],
+                    "type": "string"
+                },
+                "url": {
+                    "description": "Default preview page url for the environment.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

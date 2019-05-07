@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "containerId": {
+            "required": true,
+            "type": "string"
+        },
+        "containerVersionId": {
+            "required": true,
+            "type": "string"
+        },
+        "fingerprint": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {}
+    }
+}

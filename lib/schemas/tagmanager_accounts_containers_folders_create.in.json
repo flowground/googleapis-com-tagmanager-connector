@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "containerId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents a Google Tag Manager Folder.",
+            "properties": {
+                "accountId": {
+                    "description": "GTM Account ID.",
+                    "type": "string"
+                },
+                "containerId": {
+                    "description": "GTM Container ID.",
+                    "type": "string"
+                },
+                "fingerprint": {
+                    "description": "The fingerprint of the GTM Folder as computed at storage time. This value is recomputed whenever the folder is modified.",
+                    "type": "string"
+                },
+                "folderId": {
+                    "description": "The Folder ID uniquely identifies the GTM Folder.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Folder display name.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

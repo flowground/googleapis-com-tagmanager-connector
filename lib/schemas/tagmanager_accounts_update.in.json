@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "fingerprint": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Represents a Google Tag Manager Account.",
+            "properties": {
+                "accountId": {
+                    "description": "The Account ID uniquely identifies the GTM Account.",
+                    "type": "string"
+                },
+                "fingerprint": {
+                    "description": "The fingerprint of the GTM Account as computed at storage time. This value is recomputed whenever the account is modified.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Account display name.",
+                    "type": "string"
+                },
+                "shareData": {
+                    "description": "Whether the account shares data anonymously with Google and others.",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

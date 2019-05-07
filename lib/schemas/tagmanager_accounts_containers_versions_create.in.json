@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "accountId": {
+            "required": true,
+            "type": "string"
+        },
+        "containerId": {
+            "required": true,
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Options for new container versions.",
+            "properties": {
+                "name": {
+                    "description": "The name of the container version to be created.",
+                    "type": "string"
+                },
+                "notes": {
+                    "description": "The notes of the container version to be created.",
+                    "type": "string"
+                },
+                "quickPreview": {
+                    "description": "The creation of this version may be for quick preview and shouldn't be saved.",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
