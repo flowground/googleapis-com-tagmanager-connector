@@ -8671,7 +8671,7 @@
                 "description": "Oauth 2.0 authentication",
                 "type": "oauth2",
                 "flows": {
-                    "implicit": {
+                    "authorizationCode": {
                         "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
                         "scopes": {
                             "https://www.googleapis.com/auth/tagmanager.delete.containers": "Delete your Google Tag Manager containers",
@@ -8681,7 +8681,8 @@
                             "https://www.googleapis.com/auth/tagmanager.manage.users": "Manage user permissions of your Google Tag Manager account and container",
                             "https://www.googleapis.com/auth/tagmanager.publish": "Publish your Google Tag Manager container versions",
                             "https://www.googleapis.com/auth/tagmanager.readonly": "View your Google Tag Manager container and its subcomponents"
-                        }
+                        },
+                        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token"
                     }
                 }
             }
